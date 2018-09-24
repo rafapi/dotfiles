@@ -1,0 +1,12 @@
+# Make vim the default editor.
+export VISUAL='nvim'
+export EDITOR="${VISUAL}"
+
+# Force global editor for GIT
+export GIT_EDITOR="${VISUAL}"
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+export VIRTUALENVWRAPPER_PYTHON=$(asdf which python)
+source /usr/local/bin/virtualenvwrapper.sh
