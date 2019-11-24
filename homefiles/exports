@@ -11,4 +11,20 @@ export PROJECT_HOME=$HOME/Devel
 export VIRTUALENVWRAPPER_PYTHON=$(asdf which python)
 source /usr/local/bin/virtualenvwrapper.sh
 
-export PATH=$PATH:$HOME/bin/
+export PATH=$PATH:$HOME/bin
+
+# zlib stuff
+## Required by `asdf` and `pyenv`
+export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib"
+export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
+
+# For pkg-config to find zlib you may need to set:
+export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
+
+# Go
+export GOPATH=$HOME/golib
+export PATH=$PATH:$GOPATH/bin
+export GOPATH=$GOPATH:$HOME/code/go
+
+# Flutter
+export PATH=$PATH:$HOME/code/flutter/bin
