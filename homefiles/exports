@@ -1,5 +1,13 @@
 # Make vim the default editor.
-export VISUAL='nvim'
+
+if which nvim &> /dev/null; then
+    export VISUAL=$(which nvim)
+elif [ -x "$HOME/bin/vim" ]; then
+    export EDITOR=$HOME/bin/vim
+else
+    export EDITOR=vim
+fi
+
 export EDITOR="${VISUAL}"
 
 # Force global editor for GIT
@@ -28,3 +36,14 @@ export GOPATH=$GOPATH:$HOME/code/go
 
 # Flutter
 export PATH=$PATH:$HOME/code/flutter/bin
+
+# iTerm SHELL integration
+export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
+
+# LibreSSL
+export PATH="/usr/local/opt/libressl/bin:$PATH"
+
+export LDFLAGS="-L/usr/local/opt/libressl/lib"
+export CPPFLAGS="-I/usr/local/opt/libressl/include"
+
+export PKG_CONFIG_PATH="/usr/local/opt/libressl/lib/pkgconfig"
