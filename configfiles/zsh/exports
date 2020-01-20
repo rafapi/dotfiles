@@ -15,7 +15,7 @@ export GIT_EDITOR="${VISUAL}"
 
 # mvenv
 export WORKON_HOME=$HOME/.virtualenvs
-source $HOME/.mvenv
+source $HOME/.mvenv/mvenv.sh
 
 # local executables dirextory
 export PATH=$PATH:$HOME/bin
