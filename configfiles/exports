@@ -1,3 +1,7 @@
+# Allow bash autocompletion
+autoload bashcompinit
+bashcompinit
+
 # Make vim the default editor.
 
 if which nvim &> /dev/null; then
